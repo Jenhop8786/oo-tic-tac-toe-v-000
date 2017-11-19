@@ -61,9 +61,13 @@ end
 def over?
   won || draw?
 end
-def winner 
+def winner
   if combo = won?
     @board[combo[0]]
   end
 end
 def play
+  turn until over?
+  puts winner ? "Congratulations #{winner}!" : "Cat's Game!"
+end
+end
