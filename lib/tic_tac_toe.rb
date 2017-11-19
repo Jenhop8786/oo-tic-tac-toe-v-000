@@ -92,7 +92,7 @@ end
     @board[location.to_i]
   end
 
-  def position_taken?(board, index)
-    !(board[index] == " " || board[index] == "" || board[index] == nil)
+  def position_taken?(location)
+    !position(location).nil? || position(location) == " "
   end
 end
