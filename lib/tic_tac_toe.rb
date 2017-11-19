@@ -63,11 +63,13 @@ class TicTacToe
   def turn_count
     @board.count{|token| token == "X" || token == "O"}
   end
-  
+
   def move(location, token)
+    if valid_move?(location)
     @board[location.to_i - 1] = token
   end
-  
+  end
+
 def input_to_index(user_input)
   user_input.to_i - 1
 end
