@@ -91,7 +91,7 @@ end
   end
 
   def position(location)
-    @board[location.to_i]
+    @board[location.to_i-1]
   end
 
   def position_taken?(location)
