@@ -59,7 +59,7 @@ def draw?
   full? && !won?
 end
 def over?
-  won || draw?
+  won? || draw?
 end
 def winner
   if combo = won?
