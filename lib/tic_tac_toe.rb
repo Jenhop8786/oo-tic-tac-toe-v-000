@@ -65,7 +65,7 @@ class TicTacToe
   end
 
   def move(location, token)
-    @board[location.to_i - 1] = token
+    @board[location.to_i-1] = token
   end
   end
 
