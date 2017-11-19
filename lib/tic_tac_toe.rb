@@ -35,14 +35,16 @@ class TicTacToe
   end
 
   def turn
-      display_board
       puts "Please enter 1-9:"
-      input= gets.strip
+      input = gets.strip
+      index = input.to_i
       if !valid_move?(input)
-        turn
-      end
-      move(input, current_player)
+      move(index, current_player)
+      display_board
+    else
+      turn
     end
+  end
 
     def valid_move?(input)
     input.to_i.between?(1,9) && !position_taken?(input.to_i-1)
@@ -85,8 +87,12 @@ end
   end
 
   def winner
-    if winning_combo = won?
-      @winner = position(winning_combo.first)
+    return nil if !won?
+    position = won?[0]
+    if @board[position] == "X"
+      return "X"
+    elsif @board[position] == "O"
+      return "O"
     end
   end
 
