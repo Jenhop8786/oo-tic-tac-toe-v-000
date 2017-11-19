@@ -65,7 +65,6 @@ class TicTacToe
   end
 
   def move(location, token)
-    if valid_move?(location)
     @board[location.to_i - 1] = token
   end
   end
