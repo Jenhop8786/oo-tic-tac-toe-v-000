@@ -93,6 +93,6 @@ end
   end
 
   def position_taken?(location)
-    !position(location).nil? || position(location) == " "
+    !(position(location).nil? || position(location) == " "
   end
 end
