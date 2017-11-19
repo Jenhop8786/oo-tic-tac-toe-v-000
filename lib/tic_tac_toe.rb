@@ -63,13 +63,15 @@ class TicTacToe
   def turn_count
     @board.count{|token| token == "X" || token == "O"}
   end
-
+  
   def move(location, token)
     @board[location.to_i - 1] = token
   end
+  
 def input_to_index(user_input)
   user_input.to_i - 1
 end
+
   def won?
     WIN_COMBINATIONS.detect do |combo|
       position(combo[0]) == position(combo[1]) &&
