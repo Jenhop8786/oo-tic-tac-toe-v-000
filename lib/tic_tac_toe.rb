@@ -87,12 +87,8 @@ end
   end
 
   def winner
-    return nil if !won?
-    position = won?[0]
-    if @board[position] == "X"
-      return "X"
-    elsif @board[position] == "O"
-      return "O"
+    if winning_combo = won?
+      @winner = position(winning_combo.first)
     end
   end
 
